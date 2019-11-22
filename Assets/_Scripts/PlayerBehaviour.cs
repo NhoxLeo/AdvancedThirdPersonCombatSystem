@@ -10,6 +10,7 @@ public class PlayerBehaviour : MonoBehaviour
 
     [Header("Movement")]
     public bool canMove;
+    public bool hasTarget;
     public float moveSpeed;
     public float sprintSpeed;
     private float normalSpeed;
@@ -20,12 +21,14 @@ public class PlayerBehaviour : MonoBehaviour
 
     public Vector3 movement;
 
+    private WarpController wp;
     private CharacterController characterController;
 
     void Start()
     {
         characterController = GetComponent<CharacterController>();
         anim = GetComponent<Animator>();
+        wp = GetComponent<WarpController>();
         normalSpeed = moveSpeed;
     }
 
@@ -33,7 +36,10 @@ public class PlayerBehaviour : MonoBehaviour
     {
         MovementAndJump();
         RotateTowardsCamera();
-        Combat();
+        if (wp.target != null)
+        {
+            Combat();
+        }
     }
 
     void MovementAndJump()

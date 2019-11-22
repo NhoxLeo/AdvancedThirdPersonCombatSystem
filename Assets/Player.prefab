@@ -1541,6 +1541,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+  minDistance: 0
+  allowedDistance: 200
   screenTargets: []
 --- !u!114 &444676480
 MonoBehaviour:
@@ -4502,10 +4504,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 360c7819a5d4b5f4e8c7386a10e056fa, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 400002, guid: 360c7819a5d4b5f4e8c7386a10e056fa, type: 3}
       propertyPath: m_LocalScale.x
       value: 2
       objectReference: {fileID: 0}
@@ -4513,17 +4511,21 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 360c7819a5d4b5f4e8c7386a10e056fa, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 360c7819a5d4b5f4e8c7386a10e056fa, type: 3}
       propertyPath: LayerMask.m_Bits
       value: 55
       objectReference: {fileID: 0}
-    - target: {fileID: 6400000, guid: 360c7819a5d4b5f4e8c7386a10e056fa, type: 3}
-      propertyPath: m_Convex
-      value: 0
+    - target: {fileID: 19800002, guid: 360c7819a5d4b5f4e8c7386a10e056fa, type: 3}
+      propertyPath: InitialModule.startRotationX.minMaxState
+      value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 10800000, guid: 360c7819a5d4b5f4e8c7386a10e056fa, type: 3}
-      propertyPath: m_BoundingSphereOverride.x
-      value: 0
+    - target: {fileID: 19800002, guid: 360c7819a5d4b5f4e8c7386a10e056fa, type: 3}
+      propertyPath: InitialModule.startRotationY.minMaxState
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 10800000, guid: 360c7819a5d4b5f4e8c7386a10e056fa, type: 3}
       propertyPath: m_BoundingSphereOverride.y
@@ -4536,14 +4538,6 @@ PrefabInstance:
     - target: {fileID: 10800000, guid: 360c7819a5d4b5f4e8c7386a10e056fa, type: 3}
       propertyPath: m_BoundingSphereOverride.w
       value: -9.192778e-38
-      objectReference: {fileID: 0}
-    - target: {fileID: 19800002, guid: 360c7819a5d4b5f4e8c7386a10e056fa, type: 3}
-      propertyPath: InitialModule.startRotationX.minMaxState
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 19800002, guid: 360c7819a5d4b5f4e8c7386a10e056fa, type: 3}
-      propertyPath: InitialModule.startRotationY.minMaxState
-      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 360c7819a5d4b5f4e8c7386a10e056fa, type: 3}

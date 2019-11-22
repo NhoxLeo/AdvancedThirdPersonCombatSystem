@@ -6,12 +6,16 @@ using System;
 
 public class WarpController : MonoBehaviour
 {
-    private Animator anim;
     [Header("Current Target")]
     public Transform target;
     [Space]
+    public float minDistance; //The distance between the closest target and cursor
+    public int allowedDistance; //The distance allowed between the target and cursor to receive a target
+    [Space]
     public List<Transform> screenTargets = new List<Transform>();
-    
+
+    private Animator anim;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,7 +38,14 @@ public class WarpController : MonoBehaviour
         {
             gm.GetComponent<TargetScript>().uiLock.SetActive(false);
         }
-        target.GetComponent<TargetScript>().uiLock.SetActive(true);
+        if (minDistance < allowedDistance)
+        {
+            target.GetComponent<TargetScript>().uiLock.SetActive(true);
+        }
+        else
+        {
+            target = null;
+        }
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -42,7 +53,7 @@ public class WarpController : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
         }
     }
-
+    
     public int targetIndex()
     {
         float[] distances = new float[screenTargets.Count];
@@ -52,7 +63,7 @@ public class WarpController : MonoBehaviour
             distances[i] = Vector2.Distance(Camera.main.WorldToScreenPoint(screenTargets[i].position), new Vector2(Screen.width / 2, Screen.height / 2));
         }
 
-        float minDistance = Mathf.Min(distances);
+        minDistance = Mathf.Min(distances);
         int index = 0;
 
         for (int i = 0; i < distances.Length; i++)
@@ -62,7 +73,6 @@ public class WarpController : MonoBehaviour
                 index = i;
             }
         }
-
         return index;
 
     }
