@@ -23649,8 +23649,8 @@ MonoBehaviour:
   UseMoveVector: 0
   Target: {fileID: 0}
   MoveVector: {x: 0, y: 0, z: 1}
-  MoveSpeed: 4
-  IsHomingMove: 0
+  MoveSpeed: 6
+  IsHomingMove: 1
   MoveDistance: 20
   IsVisible: 1
   InstanceBehaviour: 0

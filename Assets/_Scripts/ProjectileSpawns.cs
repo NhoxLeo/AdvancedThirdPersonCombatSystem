@@ -23,9 +23,11 @@ public class ProjectileSpawns : MonoBehaviour
     public GameObject fireBolt;
     public GameObject meteor;
     public GameObject electricBall;
-    public GameObject purpleBall;
+    public GameObject pinkBolt;
     public GameObject frostBolt;
     public GameObject frostMeteor;
+    public GameObject greenBall;
+    public GameObject blackFireBall;
 
     void ShootProjectile(AnimationEvent Stats)
     {
@@ -65,14 +67,20 @@ public class ProjectileSpawns : MonoBehaviour
             case "electricBall":
                 attack = electricBall;
                 break;
-            case "purpleBall":
-                attack = purpleBall;
+            case "pinkBolt":
+                attack = pinkBolt;
                 break;
             case "frostBolt":
                 attack = frostBolt;
                 break;
             case "frostMeteor":
                 attack = frostMeteor;
+                break;
+            case "greenBall":
+                attack = greenBall;
+                break;
+            case "blackFireBall":
+                attack = blackFireBall;
                 break;
             default:
                 Debug.LogWarning("Wrong string");

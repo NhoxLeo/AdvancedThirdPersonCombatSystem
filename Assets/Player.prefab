@@ -1390,7 +1390,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4374257187680965821}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0.000000005122274, y: 0, z: 0}
+  m_LocalPosition: {x: -0.0000000055879354, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4374257187680929991}
@@ -1442,6 +1442,7 @@ GameObject:
   - component: {fileID: 4374257189468089063}
   - component: {fileID: 4374257189468089062}
   - component: {fileID: 4374257187680965692}
+  - component: {fileID: 579435496095485742}
   - component: {fileID: 444676480}
   m_Layer: 8
   m_Name: Player
@@ -1521,6 +1522,7 @@ MonoBehaviour:
   anim: {fileID: 4374257187673679535}
   cameraObject: {fileID: 4374257188070095363}
   canMove: 1
+  hasTarget: 0
   moveSpeed: 2
   sprintSpeed: 4
   jumpForce: 8
@@ -1544,6 +1546,23 @@ MonoBehaviour:
   minDistance: 0
   allowedDistance: 200
   screenTargets: []
+--- !u!114 &579435496095485742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4374257187680965827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 177e602ba4cfa7e4d83fe4185e203fb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 4374257187669465197}
+  fireMaterial: {fileID: 2100000, guid: 63300c96f579b2f4d9a2bd0498b0366a, type: 2}
+  electricMaterial: {fileID: 2100000, guid: 5f85b5be4114fe84caf65b05506ca842, type: 2}
+  waterMaterial: {fileID: 2100000, guid: f6e1c08b2bb4446419adbf33ea550c22, type: 2}
+  darkMagic: {fileID: 2100000, guid: 6ba2e481c3c2d874d9328c8b739b0f0e, type: 2}
 --- !u!114 &444676480
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1566,11 +1585,15 @@ MonoBehaviour:
   meteor: {fileID: 7886170092030017360, guid: 1a0c8bc7a47b3c64faa3153215abeec7, type: 3}
   electricBall: {fileID: 8643381824618442732, guid: 49f535590b01bd044bcceb708fd480b9,
     type: 3}
-  purpleBall: {fileID: 8759486023271857779, guid: 4762ea5a9c6a4a443a80c8991cca92fd,
+  pinkBolt: {fileID: 2954065050557164471, guid: 4dac943ac5251e04aa0b75f6f56cfa60,
     type: 3}
   frostBolt: {fileID: 7046684712216453769, guid: 08dfecd65ae94c24abf36e213e6ce00e,
     type: 3}
   frostMeteor: {fileID: 397601076734337831, guid: c3986dec43266d942ba1f7fef6f694ec,
+    type: 3}
+  greenBall: {fileID: 4140992748094005548, guid: 1603984c615eb244d8045ac072c43a43,
+    type: 3}
+  blackFireBall: {fileID: 2148353240163501099, guid: 56fc38369347e4542ba0b5f217c639e5,
     type: 3}
 --- !u!1 &4374257187680965829
 GameObject:
@@ -1620,7 +1643,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c0ef650cc465a2c4eb7829340e0ba0a9, type: 2}
+  - {fileID: 2100000, guid: f6e1c08b2bb4446419adbf33ea550c22, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

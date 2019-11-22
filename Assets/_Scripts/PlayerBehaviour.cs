@@ -23,12 +23,14 @@ public class PlayerBehaviour : MonoBehaviour
 
     private WarpController wp;
     private CharacterController characterController;
+    private PlayerStances ps;
 
     void Start()
     {
         characterController = GetComponent<CharacterController>();
         anim = GetComponent<Animator>();
         wp = GetComponent<WarpController>();
+        ps = GetComponent<PlayerStances>();
         normalSpeed = moveSpeed;
     }
 
@@ -106,7 +108,10 @@ public class PlayerBehaviour : MonoBehaviour
 
     void Combat()
     {
-        EquipCombo();
+        if (comboCount == 0)
+        {
+            EquipCombo();
+        }
         if (Input.GetKeyDown(KeyCode.Q))
         {
             anim.Play("Ultimate");
@@ -163,19 +168,19 @@ public class PlayerBehaviour : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            comboEquipped = combos.combo1;
+            ps.ChangeStance(PlayerStances.Stances.water, this);
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            comboEquipped = combos.combo2;
+            ps.ChangeStance(PlayerStances.Stances.fire, this);
         }
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            comboEquipped = combos.combo3;
+            ps.ChangeStance(PlayerStances.Stances.electric, this);
         }
         if (Input.GetKeyDown(KeyCode.Alpha4))
         {
-            comboEquipped = combos.combo4;
+            ps.ChangeStance(PlayerStances.Stances.dark, this);
         }
     }
 
