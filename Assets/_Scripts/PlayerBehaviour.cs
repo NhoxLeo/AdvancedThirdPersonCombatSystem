@@ -38,10 +38,7 @@ public class PlayerBehaviour : MonoBehaviour
     {
         MovementAndJump();
         RotateTowardsCamera();
-        if (wp.target != null)
-        {
-            Combat();
-        }
+        Combat();
     }
 
     void MovementAndJump()
@@ -111,6 +108,10 @@ public class PlayerBehaviour : MonoBehaviour
         if (comboCount == 0)
         {
             EquipCombo();
+        }
+        if (wp.target == null)
+        {
+            return;
         }
         if (Input.GetKeyDown(KeyCode.Q))
         {
